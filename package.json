@@ -1,0 +1,30 @@
+{
+  "name": "csv-to-json",
+  "version": "1.0.0",
+  "description": "Simple script that converts a CSV files in a JSON file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteobandiera/csv-to-json.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "es6",
+    "csv",
+    "json"
+  ],
+  "author": "Matteo Bandiera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matteobandiera/csv-to-json/issues"
+  },
+  "homepage": "https://github.com/matteobandiera/csv-to-json#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "csvtojson": "1.1.9"
+  }
+}
