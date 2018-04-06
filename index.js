@@ -19,13 +19,24 @@ const parseCsv = (filename) => {
     console.log(`Row ${index}:\n`, jsonObj);
     jsonArray.push(jsonObj);
   })
-  .on('end',  () => {
-    fs.writeFileSync(
+  .on('done', (error) => {
+    if (error) {
+      console.log(`Oop, an error occured.\n`, error.message);
+      return process.exit(1);
+    }
+    fs.writeFile(
       path.join(__dirname, jsonFilename),
-      JSON.stringify(jsonArray)
+      JSON.stringify(jsonArray),
+      (error) => {
+        if (error) {
+          console.log(`Oop, an error occured.\n`, error.message);
+          return process.exit(1);
+        }
+        console.log('CSV file processed.\n');
+        console.log(`New JSON file created ${jsonFilename}`);
+        process.exit(0);
+      }
     );
-    console.log('CSV file processed.\n');
-    console.log(`New JSON file created ${jsonFilename}`)
   });
 }
 
